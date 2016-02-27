@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Web app Servlets-JSP-JDBC:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Web_app_Servlets_JSP_JDBC_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Web app Servlets-JSP-JDBC/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Web app Servlets-JSP-JDBC" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
