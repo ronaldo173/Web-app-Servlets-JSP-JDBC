@@ -1,3 +1,7 @@
+package all;
+
+import all.Student;
+
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;

@@ -1,3 +1,5 @@
+package all;
+
 /**
  * Created by Santer on 27.02.2016.
  */
@@ -54,7 +56,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "all.Student{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +

@@ -9,15 +9,20 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
 
 /**
  * Created by Santer on 27.02.2016.
  */
 @WebServlet("/test")
-public class TestServlet  extends HttpServlet {
+public class TestServlet extends HttpServlet {
 
-    @Resource(name="jdbc/webAppSJJ")
+    @Resource(name = "jdbc/webAppSJJ")
     private DataSource dataSource;
 
     @Override
@@ -33,8 +38,9 @@ public class TestServlet  extends HttpServlet {
             ResultSet resultSet = statement.executeQuery("SELECT * from student");
             writer.println();
 
-            while (resultSet.next()){
-              String email = resultSet.getString("email");
+            while (resultSet.next()) {
+                String email = resultSet.getString("email");
+                writer.println();
                 writer.print(email);
             }
         } catch (SQLException e) {
@@ -49,5 +55,6 @@ public class TestServlet  extends HttpServlet {
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doPut(req, resp);
+
     }
 }
