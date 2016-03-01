@@ -1,10 +1,10 @@
 package all;
 
-import all.Student;
-
 import javax.sql.DataSource;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,11 +39,28 @@ public class StudentDBUtil {
                     Student student = new Student(id, firstName, lastName, email);
 
                     students.add(student);
+
                 }
             }
         }
 
         return students;
+    }
+
+    public void addStudent(Student student) throws SQLException {
+        System.out.println(student);
+        String sql = "INSERT into STUDENT (first_name, last_name, email) values(?,?,?)";
+
+        try (
+                Connection connection = dataSource.getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setString(1, student.getFirstName());
+            preparedStatement.setString(2, student.getLastName());
+            preparedStatement.setString(3, student.getEmail());
+
+            preparedStatement.execute();
+        }
     }
 }
 

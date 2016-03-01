@@ -39,10 +39,38 @@ public class StudentControllerServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         try {
-            listStudents(req, resp);
+            //read parameter
+            String theCommand = req.getParameter("command");
+            if (theCommand == null) {
+                theCommand = "LIST";
+            }
+
+            switch (theCommand) {
+                case "LIST":
+                    listStudents(req, resp);
+                    break;
+                case "ADD":
+                    addStudent(req, resp);
+                    break;
+                default:
+                    listStudents(req, resp);
+
+            }
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(null, "error", e.toString(), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showConfirmDialog(null, e.toString(), "error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    private void addStudent(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+        String firstName = req.getParameter("firstName");
+        String lastName = req.getParameter("lastName");
+        String email = req.getParameter("email");
+
+        Student student = new Student(firstName, lastName, email);
+        studentDBUtil.addStudent(student);
+
+        //send back to main page
+        listStudents(req, resp);
     }
 
     private void listStudents(HttpServletRequest req, HttpServletResponse resp) throws Exception {
