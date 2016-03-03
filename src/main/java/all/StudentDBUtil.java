@@ -1,10 +1,7 @@
 package all;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,6 +58,35 @@ public class StudentDBUtil {
 
             preparedStatement.execute();
         }
+    }
+
+    public Student getStudent(String studentId) throws Exception {
+        Student student = null;
+        String sql = "select * from student where id = ?";
+        int stId;
+        try (
+                Connection connection = dataSource.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);
+
+
+        ) {
+            stId = Integer.parseInt(studentId);
+            statement.setInt(1, stId);
+
+            try (
+                    ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+
+                    String first_name = resultSet.getString("first_Name");
+                    String last_name = resultSet.getString("last_Name");
+                    String email = resultSet.getString("email");
+                    student = new Student(stId, first_name, last_name, email);
+                } else throw new Exception("no such student in db by id");
+            }
+
+        }
+
+        return student;
     }
 }
 

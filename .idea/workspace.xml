@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9af22602-213b-4b20-a0d5-95e82b4843b4" name="Default" comment="finished add to db logic, table show, add form">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/update-student-form.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_app_Servlets_JSP_JDBC_war_exploded/WEB-INF/classes/all/StudentControllerServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/Web_app_Servlets_JSP_JDBC_war_exploded/WEB-INF/classes/all/StudentControllerServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_app_Servlets_JSP_JDBC_war_exploded/WEB-INF/classes/all/StudentDBUtil.class" afterPath="$PROJECT_DIR$/out/artifacts/Web_app_Servlets_JSP_JDBC_war_exploded/WEB-INF/classes/all/StudentDBUtil.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/all/StudentControllerServlet.class" afterPath="$PROJECT_DIR$/target/classes/all/StudentControllerServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/all/StudentDBUtil.class" afterPath="$PROJECT_DIR$/target/classes/all/StudentDBUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_app_Servlets_JSP_JDBC_war_exploded/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/artifacts/Web_app_Servlets_JSP_JDBC_war_exploded/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_app_Servlets_JSP_JDBC_war_exploded/css/style.css" afterPath="$PROJECT_DIR$/out/artifacts/Web_app_Servlets_JSP_JDBC_war_exploded/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Web_app_Servlets_JSP_JDBC_war_exploded/list-students.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Web_app_Servlets_JSP_JDBC_war_exploded/list-students.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/all/StudentControllerServlet.java" afterPath="$PROJECT_DIR$/src/main/java/all/StudentControllerServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/all/StudentDBUtil.java" afterPath="$PROJECT_DIR$/src/main/java/all/StudentDBUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/list-students.jsp" afterPath="$PROJECT_DIR$/web/list-students.jsp" />
     </list>
     <ignored path="Web app Servlets-JSP-JDBC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -127,7 +129,7 @@
       <file leaf-file-name="StudentControllerServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/all/StudentControllerServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39867842">
+            <state vertical-scroll-proportion="0.41189426">
               <caret line="44" column="36" selection-start-line="43" selection-start-column="37" selection-end-line="44" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -236,7 +238,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,7 +273,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -877,11 +879,12 @@
       <workItem from="1456856472975" duration="6596000" />
       <workItem from="1456897922459" duration="3383000" />
       <workItem from="1456983485327" duration="508000" />
+      <workItem from="1457013280914" duration="38000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37537000" />
+    <option name="totallyTimeSpent" value="37575000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1096" extended-state="6" />
@@ -1365,7 +1368,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/all/StudentControllerServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39867842">
+        <state vertical-scroll-proportion="0.41189426">
           <caret line="44" column="36" selection-start-line="43" selection-start-column="37" selection-end-line="44" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
