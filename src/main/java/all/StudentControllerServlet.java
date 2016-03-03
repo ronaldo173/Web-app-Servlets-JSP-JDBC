@@ -54,6 +54,13 @@ public class StudentControllerServlet extends HttpServlet {
                     break;
                 case "LOAD":
                     loadStudent(req, resp);
+                    break;
+                case "UPDATE":
+                    updateStudent(req, resp);
+                    break;
+                case "DELETE":
+                    deleteStudent(req, resp);
+                    break;
                 default:
                     listStudents(req, resp);
 
@@ -61,6 +68,25 @@ public class StudentControllerServlet extends HttpServlet {
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e.toString(), "error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    private void deleteStudent(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+        String studId = req.getParameter("studentId");
+        studentDBUtil.deleteStudent(studId);
+
+        listStudents(req, resp);
+    }
+
+    private void updateStudent(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+        int id = Integer.parseInt(req.getParameter("studentId"));
+        String firstName = req.getParameter("firstName");
+        String lastName = req.getParameter("lastName");
+        String email = req.getParameter("email");
+
+        Student student = new Student(id, firstName, lastName, email);
+        studentDBUtil.updateStudent(student);
+
+        listStudents(req, resp);
     }
 
     private void loadStudent(HttpServletRequest req, HttpServletResponse resp) throws Exception {

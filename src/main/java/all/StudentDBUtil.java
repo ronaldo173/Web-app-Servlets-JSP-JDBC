@@ -1,7 +1,10 @@
 package all;
 
 import javax.sql.DataSource;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,6 +90,38 @@ public class StudentDBUtil {
         }
 
         return student;
+    }
+
+    public void updateStudent(Student student) {
+        String sql = "update student set first_name=?, last_name=?," +
+                "email=? where id = ?";
+
+        try (
+                Connection connection = dataSource.getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement(sql)
+        ) {
+            preparedStatement.setString(1, student.getFirstName());
+            preparedStatement.setString(2, student.getLastName());
+            preparedStatement.setString(3, student.getEmail());
+            preparedStatement.setInt(4, student.getId());
+
+            preparedStatement.execute();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void deleteStudent(String studentId) throws Exception {
+        String sql = "delete from student where id = ?";
+
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
+            statement.setInt(1, Integer.parseInt(studentId));
+            statement.execute();
+        }
     }
 }
 

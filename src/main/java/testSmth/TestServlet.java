@@ -15,7 +15,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-
 /**
  * Created by Santer on 27.02.2016.
  */
